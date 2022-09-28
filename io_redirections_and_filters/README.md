@@ -1,1 +1,1 @@
-Created a new file with a text
+Write the contents of one file into another
