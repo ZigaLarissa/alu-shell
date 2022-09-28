@@ -1,1 +1,1 @@
-sets no permissions as all to the owner and group, but all permissions to other users
+sets the mode of the file hello to this: rwx r-x -wx
