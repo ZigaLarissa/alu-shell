@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((water#WATER+stir.#STIR)) | echo "obase=bestchol" 
+echo $((water#WATER + stir.#STIR)) | tr '$((water#WATER + stir.#STIR))' 'bestchol'
