@@ -1,0 +1,2 @@
+#!/bin/bash
+printef "%0.2f" $NUM
