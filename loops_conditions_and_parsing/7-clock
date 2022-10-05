@@ -9,7 +9,7 @@ do
     
     minute=1
     
-    while [ "$minute" -lt 59 ]
+    while [ "$minute" -le 59 ]
     do
 	    echo "$minute"
 	    minute=$((minute+1))
