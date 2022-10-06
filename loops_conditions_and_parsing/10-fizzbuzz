@@ -6,16 +6,16 @@ while [ "$n" -le 100 ]
 do
 	
 
-if ! (( n/3 )) && ! (( n/5 ))
+if ! (( n % 3 )) && ! (( n % 5 ))
 then
 echo "FizzBuzz"
     
-     elif ! (( n/3 ))
+     elif ! (( n % 3 ))
        then
         echo "Fizz"
 
 
-     elif ! (( n/5 ))
+     elif ! (( n % 5 ))
        then
          echo "Buzz"
 else
