@@ -6,7 +6,8 @@ echo "pgrep /var/run/myscript.pid"> /var/run/myscript.pid
 trap "I hate the kill command" SIGTERM
 trap "Y U no love me?!" SIGINT
 
-trap "rm -f /var/run/myscript.pid" SIGQUIT || SIGTERM
+tempfile=/var/run/myscript.pid
+trap "rm -f $tempfile" SIGTERM
 
 while :
 do 
