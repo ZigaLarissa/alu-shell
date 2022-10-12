@@ -17,19 +17,19 @@ fi
 
 
 if [ "$command" == stop ]
-then
-    echo "manage_my_process stopped"	
+then	
     pkill -f manage_my_process
+    echo "manage_my_process stopped"
     rm /var/run/my_process.pid
 fi
 
 
 if [ "$command" == restart ]
-then
-    echo "manage_my_process restarted"	
+then	
     pkill -f manage_my_process
     rm /var/run/my_process.pid
     bash ./manage_my_process
+    echo "manage_my_process restarted"
     echo "$!"> /var/run/my_process.pid
 fi
 
