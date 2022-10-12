@@ -2,12 +2,11 @@
 #creating a file that contains this process pid
 
 echo "pgrep /var/run/myscript.pid"> /var/run/myscript.pid
-
-trap "I hate the kill command" SIGTERM
 trap "Y U no love me?!" SIGINT
 
 tempfile=/var/run/myscript.pid
-trap "rm -f $tempfile" SIGTERM
+trap 'rm -f $tempfile' SIGTERM
+trap "I hate the kill command" SIGTERM
 
 while :
 do 
