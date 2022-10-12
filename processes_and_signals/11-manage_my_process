@@ -5,23 +5,22 @@ command=$1
 
 case $command in
 	start)
-		bash ./manage_my_process
-		echo "$!"> /var/run/my_process.pid
-		echo "manage_my_process started"
-		;;
+		bash ./manage_my_process \
+		&& echo "$!"> /var/run/my_process.pid
+		echo "manage_my_process started" ;;
+
 	stop)
-	        pkill -f manage_my_process
-	        rm -f /var/run/my_process.pid
-	        echo "manage_my_process stopped"
-	        ;;
+	        pkill -f manage_my_process \
+	        && rm /var/run/my_process.pid
+	        echo "manage_my_process stopped" ;;
+
 	restart)
-	        pkill -f manage_my_process
-	        rm -f /var/run/my_process.pid
-	        bash ./manage_my_process
-	        echo "$!"> /var/run/my_process.pid
-	        echo "manage_my_process restarted"
-		;;
+	        pkill -f manage_my_process \
+	        && rm /var/run/my_process.pid \
+	        && bash ./manage_my_process \
+	        && echo "$!"> /var/run/my_process.pid
+	        echo "manage_my_process restarted" ;;
+
 	*)
-	        echo "Usage: manage_my_process {start|stop|restart}"
-		;;
+	        echo "Usage: manage_my_process {start|stop|restart}" ;;
 esac	
